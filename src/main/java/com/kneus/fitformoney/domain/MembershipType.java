@@ -1,4 +1,4 @@
-package com.kneus.fitformoney;
+package com.kneus.fitformoney.domain;
 
 public enum MembershipType {
     Wooden, Silver, Gold

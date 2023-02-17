@@ -1,4 +1,4 @@
-package com.kneus.fitformoney;
+package com.kneus.fitformoney.domain;
 
 import java.util.Date;
 

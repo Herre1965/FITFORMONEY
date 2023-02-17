@@ -1,4 +1,4 @@
-package com.kneus.fitformoney;
+package com.kneus.fitformoney.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Member {
     List<Measurement> Measurements;
 
     public Member(UUID memberId, String name, Date birthdate, Double length,
-                  com.kneus.fitformoney.MembershipType membershipType, List<Measurement> measurements) {
+                  com.kneus.fitformoney.domain.MembershipType membershipType, List<Measurement> measurements) {
         MemberId = memberId;
         Name = name;
         Birthdate = birthdate;
@@ -54,11 +54,11 @@ public class Member {
         Length = length;
     }
 
-    public com.kneus.fitformoney.MembershipType getMembershipType() {
+    public com.kneus.fitformoney.domain.MembershipType getMembershipType() {
         return MembershipType;
     }
 
-    public void setMembershipType(com.kneus.fitformoney.MembershipType membershipType) {
+    public void setMembershipType(com.kneus.fitformoney.domain.MembershipType membershipType) {
         MembershipType = membershipType;
     }
 
