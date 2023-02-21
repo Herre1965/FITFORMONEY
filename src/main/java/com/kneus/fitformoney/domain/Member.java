@@ -3,14 +3,14 @@ package com.kneus.fitformoney.domain;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
+// TODO: Camelcasing toepassen
 public class Member {
-    UUID MemberId;
-    String Name;
-    Date Birthdate;
-    Double Length;
-    MembershipType MembershipType;
-    List<Measurement> Measurements;
+    private UUID MemberId;
+    private String Name;
+    private Date Birthdate;
+    private Double Length;
+    private MembershipType MembershipType;
+    private List<Measurement> Measurements;
 
     public Member(UUID memberId, String name, Date birthdate, Double length,
                   com.kneus.fitformoney.domain.MembershipType membershipType, List<Measurement> measurements) {

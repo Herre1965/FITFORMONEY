@@ -15,7 +15,4 @@ public interface MemberService {
 
      List<Member> getAllMembers();
 
-     void addMeasurementToMember(UUID MemberId, Date currentDate);
-
-
 }

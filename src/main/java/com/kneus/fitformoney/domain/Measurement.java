@@ -2,9 +2,16 @@ package com.kneus.fitformoney.domain;
 
 import java.util.Date;
 
+// TODO: 1 camelcasing toepassen
+// TODO: 2 this. toevoegen aan de variabelen
+// TODO: 3 private maken variabelen
 public class Measurement {
     Date currentDate;
-
+    Double Weight;
+    Double BMI;
+    Double FatPercentage;
+    Double LeanBodyMass;
+    Double FatMass;
     public Measurement(Date currentDate, Double weight, Double BMI, Double fatPercentage,
                        Double leanBodyMass, Double fatMass) {
         this.currentDate = currentDate;
@@ -14,12 +21,6 @@ public class Measurement {
         LeanBodyMass = leanBodyMass;
         FatMass = fatMass;
     }
-
-    Double Weight;
-    Double BMI;
-    Double FatPercentage;
-    Double LeanBodyMass;
-    Double FatMass;
 
     public Date getCurrentDate() {
         return currentDate;
