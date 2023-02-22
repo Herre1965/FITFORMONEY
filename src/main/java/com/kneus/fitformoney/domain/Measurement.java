@@ -2,24 +2,24 @@ package com.kneus.fitformoney.domain;
 
 import java.util.Date;
 
-// TODO: 1 camelcasing toepassen
-// TODO: 2 this. toevoegen aan de variabelen
-// TODO: 3 private maken variabelen
+// TODO: 1 camelcasing toepassen - done 22 feb 2023
+// TODO: 2 this. toevoegen aan de variabelen - done 22 feb 2023
+// TODO 3 private maken variabelen - done 22 feb 2023
 public class Measurement {
-    Date currentDate;
-    Double Weight;
-    Double BMI;
-    Double FatPercentage;
-    Double LeanBodyMass;
-    Double FatMass;
+    private Date currentDate;
+    private Double weight;
+    private Double BMI;
+    private Double fatPercentage;
+    private Double leanBodyMass;
+    private Double fatMass;
     public Measurement(Date currentDate, Double weight, Double BMI, Double fatPercentage,
                        Double leanBodyMass, Double fatMass) {
         this.currentDate = currentDate;
-        Weight = weight;
+        this.weight = weight;
         this.BMI = BMI;
-        FatPercentage = fatPercentage;
-        LeanBodyMass = leanBodyMass;
-        FatMass = fatMass;
+        this.fatPercentage = fatPercentage;
+        this.leanBodyMass = leanBodyMass;
+        this.fatMass = fatMass;
     }
 
     public Date getCurrentDate() {
@@ -31,11 +31,11 @@ public class Measurement {
     }
 
     public Double getWeight() {
-        return Weight;
+        return weight;
     }
 
     public void setWeight(Double weight) {
-        Weight = weight;
+        this.weight = weight;
     }
 
     public Double getBMI() {
@@ -47,26 +47,26 @@ public class Measurement {
     }
 
     public Double getFatPercentage() {
-        return FatPercentage;
+        return fatPercentage;
     }
 
     public void setFatPercentage(Double fatPercentage) {
-        FatPercentage = fatPercentage;
+        this.fatPercentage = fatPercentage;
     }
 
     public Double getLeanBodyMass() {
-        return LeanBodyMass;
+        return leanBodyMass;
     }
 
     public void setLeanBodyMass(Double leanBodyMass) {
-        LeanBodyMass = leanBodyMass;
+        this.leanBodyMass = leanBodyMass;
     }
 
     public Double getFatMass() {
-        return FatMass;
+        return fatMass;
     }
 
     public void setFatMass(Double fatMass) {
-        FatMass = fatMass;
+        this.fatMass = fatMass;
     }
 }

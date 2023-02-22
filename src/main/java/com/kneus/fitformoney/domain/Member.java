@@ -5,53 +5,53 @@ import java.util.List;
 import java.util.UUID;
 // TODO: Camelcasing toepassen
 public class Member {
-    private UUID MemberId;
-    private String Name;
-    private Date Birthdate;
-    private Double Length;
+    private UUID memberId;
+    private String name;
+    private Date birthdate;
+    private Double length;
     private MembershipType MembershipType;
     private List<Measurement> Measurements;
 
     public Member(UUID memberId, String name, Date birthdate, Double length,
                   com.kneus.fitformoney.domain.MembershipType membershipType, List<Measurement> measurements) {
-        MemberId = memberId;
-        Name = name;
-        Birthdate = birthdate;
-        Length = length;
+        this.memberId = memberId;
+        this.name = name;
+        this.birthdate = birthdate;
+        this.length = length;
         MembershipType = membershipType;
         Measurements = measurements;
     }
 
     public UUID getMemberId() {
-        return MemberId;
+        return memberId;
     }
 
     public void setMemberId(UUID memberId) {
-        MemberId = memberId;
+        this.memberId = memberId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public Date getBirthdate() {
-        return Birthdate;
+        return birthdate;
     }
 
     public void setBirthdate(Date birthdate) {
-        Birthdate = birthdate;
+        this.birthdate = birthdate;
     }
 
     public Double getLength() {
-        return Length;
+        return length;
     }
 
     public void setLength(Double length) {
-        Length = length;
+        this.length = length;
     }
 
     public com.kneus.fitformoney.domain.MembershipType getMembershipType() {
