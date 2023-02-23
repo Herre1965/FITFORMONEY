@@ -22,6 +22,10 @@ public class Member {
         Measurements = measurements;
     }
 
+    public Member (String name){
+        this.name = name;
+    }
+
     public UUID getMemberId() {
         return memberId;
     }
