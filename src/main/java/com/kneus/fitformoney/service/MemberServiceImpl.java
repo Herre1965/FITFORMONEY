@@ -4,6 +4,8 @@ import com.kneus.fitformoney.domain.Member;
 import com.kneus.fitformoney.domain.MembershipType;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,7 +35,7 @@ public class MemberServiceImpl implements MemberService {
                 (UUID.randomUUID(), "Herre", calendar.getTime(), 186.00,
                         MembershipType.Silver, null);
         Member leon = new Member
-                (UUID.randomUUID(), "Leon", new Date(66, 12, 29), 186.00,
+                (UUID.randomUUID(), "Leon", ConvertString2Date("29-12-1966"), 186.00,
                         MembershipType.Wooden, null);
         Member edwin = new Member
                 (UUID.randomUUID(), "Edwin", new Date(66, 12, 29), 186.00,
@@ -43,5 +45,17 @@ public class MemberServiceImpl implements MemberService {
         list.add(leon);
         list.add(edwin);
         return list;
+    }
+
+    public Date ConvertString2Date(String strDate) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date newDate = null;
+        try {
+            newDate = dateFormat.parse(strDate);
+            //System.out.println(newDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return newDate;
     }
 }
