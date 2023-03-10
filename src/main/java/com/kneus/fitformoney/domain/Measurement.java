@@ -2,9 +2,6 @@ package com.kneus.fitformoney.domain;
 
 import java.util.Date;
 
-// TODO: 1 camelcasing toepassen - done 22 feb 2023
-// TODO: 2 this. toevoegen aan de variabelen - done 22 feb 2023
-// TODO 3 private maken variabelen - done 22 feb 2023
 public class Measurement {
     private Date currentDate;
     private Double weight;

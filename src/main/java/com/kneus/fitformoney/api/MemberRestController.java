@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-// FIXME: getmember geeft lijst terug ipv string
-// TODO: getmember geeft nog niks terug
+
+
 
 @RestController
 public class MemberRestController {
