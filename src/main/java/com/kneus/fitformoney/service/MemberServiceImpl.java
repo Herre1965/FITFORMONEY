@@ -1,16 +1,13 @@
 package com.kneus.fitformoney.service;
 
+import com.kneus.fitformoney.domain.Measurement;
 import com.kneus.fitformoney.domain.Member;
 import com.kneus.fitformoney.domain.MembershipType;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -25,26 +22,40 @@ public class MemberServiceImpl implements MemberService {
         return null;
     }
 
-    //TODO: string constructor Member lite verwijderen (full gebruiken!)
     @Override
     public List<Member> getAllMembers() {
         List<Member> list = new ArrayList<>();
         Calendar calendar = Calendar.getInstance();
+        // TODO: Hoe kunnen we datumformaat eejj-mm-dd gebruiken in de datumvelden (Leon)
+        // TODO: Metingen toevoegen aan bestaand member (Herre)
+        // TODO: Hoe bij meting BMI berekening toevoegen
+        // TODO: Hoe excel toe te voegen
         calendar.set(1966, Calendar.DECEMBER, 28, 59, 59, 59);
         Member herre = new Member
-                (UUID.randomUUID(), "Herre", calendar.getTime(), 186.00,
+                (UUID.randomUUID(), "Herre Scherpenzeel", calendar.getTime(), 186.00,
                         MembershipType.Silver, null);
         Member leon = new Member
-                (UUID.randomUUID(), "Leon", ConvertString2Date("29-12-1966"), 186.00,
+                (UUID.randomUUID(), "Leon Zoet", ConvertString2Date("29-12-1966"), 186.00,
                         MembershipType.Wooden, null);
-        Member edwin = new Member
-                (UUID.randomUUID(), "Edwin", new Date(66, 12, 29), 186.00,
-                        MembershipType.Gold, null);
 
         list.add(herre);
         list.add(leon);
+
+        List<Measurement> meting = new ArrayList<>();
+
+        Measurement edwinMeting1 = new Measurement
+                (ConvertString2Date("13-03-2023"), 99.9, 28.87, 19.0,
+                        null, null);
+
+        Member edwin = new Member
+                (UUID.randomUUID(), "Edwin Huijser", new Date(66, 12, 29), 186.00,
+                        MembershipType.Gold, Collections.singletonList(edwinMeting1));
+
+
         list.add(edwin);
+
         return list;
+
     }
 
     public Date ConvertString2Date(String strDate) {
@@ -52,7 +63,7 @@ public class MemberServiceImpl implements MemberService {
         Date newDate = null;
         try {
             newDate = dateFormat.parse(strDate);
-            //System.out.println(newDate);
+
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -11,7 +11,7 @@ import java.util.UUID;
 public interface MemberService {
      void addMember(Member member);
 
-     Member getMember(Member MemberId);
+     Member getMember(Member memberId);
 
      List<Member> getAllMembers();
 

@@ -7,19 +7,19 @@ import java.util.UUID;
 public class Member {
     private UUID memberId;
     private String name;
-    private Date birthdate;
+    private Date birthDate;
     private Double length;
-    private MembershipType MembershipType;
-    private List<Measurement> Measurements;
+    private MembershipType memberShipType;
+    private List<Measurement> measurements;
 
     public Member(UUID memberId, String name, Date birthdate, Double length,
-                  com.kneus.fitformoney.domain.MembershipType membershipType, List<Measurement> measurements) {
+                  com.kneus.fitformoney.domain.MembershipType memberShipType, List<Measurement> measurements) {
         this.memberId = memberId;
         this.name = name;
-        this.birthdate = birthdate;
+        this.birthDate = birthdate;
         this.length = length;
-        MembershipType = membershipType;
-        Measurements = measurements;
+        this.memberShipType = memberShipType;
+        this.measurements = measurements;
     }
 
     public Member (String name){
@@ -42,12 +42,12 @@ public class Member {
         this.name = name;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Double getLength() {
@@ -58,19 +58,19 @@ public class Member {
         this.length = length;
     }
 
-    public com.kneus.fitformoney.domain.MembershipType getMembershipType() {
-        return MembershipType;
+    public com.kneus.fitformoney.domain.MembershipType getMemberShipType() {
+        return memberShipType;
     }
 
-    public void setMembershipType(com.kneus.fitformoney.domain.MembershipType membershipType) {
-        MembershipType = membershipType;
+    public void setMemberShipType(com.kneus.fitformoney.domain.MembershipType memberShipType) {
+        this.memberShipType = memberShipType;
     }
 
     public List<Measurement> getMeasurements() {
-        return Measurements;
+        return measurements;
     }
 
     public void setMeasurements(List<Measurement> measurements) {
-        Measurements = measurements;
+        this.measurements = measurements;
     }
 }
