@@ -11,6 +11,9 @@ import java.util.*;
 
 @Service
 public class MemberServiceImpl implements MemberService {
+    private final List<Member> list = new ArrayList<>();
+    private final Calendar calendar = Calendar.getInstance();
+
 
     @Override
     public void addMember(Member member) {
@@ -24,12 +27,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public List<Member> getAllMembers() {
-        List<Member> list = new ArrayList<>();
-        Calendar calendar = Calendar.getInstance();
         // TODO: Hoe kunnen we datumformaat eejj-mm-dd gebruiken in de datumvelden (Leon)
         // TODO: Metingen toevoegen aan bestaand member (Herre)
-        // TODO: Hoe bij meting BMI berekening toevoegen
-        // TODO: Hoe excel toe te voegen
+        // TODO: Hoe bij meting BMI berekening toevoegen (Edwin)
+        // TODO: Hoe excel toe te voegen (bestand inlezen en verwerken)
         calendar.set(1966, Calendar.DECEMBER, 28, 59, 59, 59);
         Member herre = new Member
                 (UUID.randomUUID(), "Herre Scherpenzeel", calendar.getTime(), 186.00,
@@ -41,21 +42,17 @@ public class MemberServiceImpl implements MemberService {
         list.add(herre);
         list.add(leon);
 
-        List<Measurement> meting = new ArrayList<>();
-
         Measurement edwinMeting1 = new Measurement
-                (ConvertString2Date("13-03-2023"), 99.9, 28.87, 19.0,
+                (ConvertString2Date("15-03-2023"), 99.9, 28.87, 19.0,
                         null, null);
 
         Member edwin = new Member
-                (UUID.randomUUID(), "Edwin Huijser", new Date(66, 12, 29), 186.00,
+                (UUID.randomUUID(), "Edwin Huijser", new Date(66, Calendar.DECEMBER, 29), 186.00,
                         MembershipType.Gold, Collections.singletonList(edwinMeting1));
-
 
         list.add(edwin);
 
         return list;
-
     }
 
     public Date ConvertString2Date(String strDate) {

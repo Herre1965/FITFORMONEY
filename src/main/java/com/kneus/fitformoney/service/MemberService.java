@@ -9,10 +9,11 @@ import java.util.List;
 import java.util.UUID;
 
 public interface MemberService {
-     void addMember(Member member);
+    void addMember(Member member);
 
-     Member getMember(Member memberId);
+    Member getMember(Member memberId);
 
-     List<Member> getAllMembers();
+    List<Member> getAllMembers();
+
 
 }

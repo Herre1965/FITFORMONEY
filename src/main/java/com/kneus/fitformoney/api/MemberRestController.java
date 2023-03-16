@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-
 @RestController
 public class MemberRestController {
 
@@ -19,7 +18,7 @@ public class MemberRestController {
     }
 
     @GetMapping("/members")
-    public List<Member> getMembers(){
+    public List<Member> getMembers() {
         return memberService.getAllMembers();
     }
 }
