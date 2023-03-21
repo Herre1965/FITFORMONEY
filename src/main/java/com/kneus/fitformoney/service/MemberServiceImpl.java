@@ -26,6 +26,13 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public Member getMemberByName(String name) {
+         return list.stream()
+                 .filter(Member -> Member.getName().equalsIgnoreCase(String.valueOf(name))).findFirst()
+                 .orElse(null);
+    }
+
+    @Override
     public List<Member> getAllMembers() {
         // TODO: Hoe kunnen we datumformaat eejj-mm-dd gebruiken in de datumvelden (Leon)
         // TODO: Metingen toevoegen aan bestaand member (Herre)
@@ -52,7 +59,24 @@ public class MemberServiceImpl implements MemberService {
 
         list.add(edwin);
 
+        Test();
         return list;
+    }
+
+    public void addMeasurementByMember(UUID memberId, Date currentDate){
+        //list.add(getMember(memberId));
+    }
+    public void Test(){
+        Member test = getMemberByName("Leon Zoet");
+        Measurement leonMeting1 = new Measurement
+                (ConvertString2Date("15-02-2023"), 99.9, 28.87, 19.0,
+                        null, null);
+        addMeasurementByMember(test.getMemberId(), leonMeting1.getMeasurementDate());
+        Measurement leonMeting2 = new Measurement
+                (ConvertString2Date("15-01-2023"), 99.9,
+                        null, 19.0,
+                        null, null);
+        addMeasurementByMember(test.getMemberId(), leonMeting2.getMeasurementDate());
     }
 
     public Date ConvertString2Date(String strDate) {

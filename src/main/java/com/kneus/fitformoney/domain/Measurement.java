@@ -3,7 +3,7 @@ package com.kneus.fitformoney.domain;
 import java.util.Date;
 
 public class Measurement {
-    private Date currentDate;
+    private Date measurementDate;
     private Double weight;
     private Double BMI;
     private Double fatPercentage;
@@ -11,7 +11,7 @@ public class Measurement {
     private Double fatMass;
     public Measurement(Date currentDate, Double weight, Double BMI, Double fatPercentage,
                        Double leanBodyMass, Double fatMass) {
-        this.currentDate = currentDate;
+        this.measurementDate = currentDate;
         this.weight = weight;
         this.BMI = BMI;
         this.fatPercentage = fatPercentage;
@@ -19,12 +19,12 @@ public class Measurement {
         this.fatMass = fatMass;
     }
 
-    public Date getCurrentDate() {
-        return currentDate;
+    public Date getMeasurementDate() {
+        return measurementDate;
     }
 
-    public void setCurrentDate(Date currentDate) {
-        this.currentDate = currentDate;
+    public void setMeasurementDate(Date measurementDate) {
+        this.measurementDate = measurementDate;
     }
 
     public Double getWeight() {

@@ -10,10 +10,10 @@ public interface MeasurmentService {
 
     }
 
-    default double calculateBMI(Double length, double weight) {
-        weight /= 100;
-        double divisor = (weight * weight);
+    public default double calculateBMI(Double length, double weight) {
+        length /= 100;
+        double divisor = (length * length);
 
-        return length / divisor;
+        return weight / divisor;
     }
 }
